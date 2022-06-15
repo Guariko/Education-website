@@ -8,6 +8,17 @@ function hide(element, classToBeRemoved) {
     element.classList.remove(classToBeRemoved);
 }
 
+function changeInnerHtmlBasedOnWindowWidth(element, windowWIdth, ifValue, elseValue) {
+    
+    if (window.innerWidth >= windowWIdth) {
+        element.innerHTML = ifValue;
+    }
+
+    else {
+        element.innerHTML = elseValue
+    };
+}
+
 /* FIXME: Functions end */
 
 /* TODO: Header starts */
@@ -30,5 +41,18 @@ headerNavBarItems.forEach(item => {
 
 /* FIXME: Header ends */
 
+/* TODO: Home starts */
 
+const homeH1 = document.querySelector(".home h1");
+const changeHomeH1ValueIfGreaterThan = 866;
+const homeH1IfValue = "<h1>Grow your skills to advance<br/>your career path</h1>";
+const homeH1ElseValue = "<h1>Grow your skills<br />to advance your<br />career path</h1>";
+
+changeInnerHtmlBasedOnWindowWidth(homeH1, changeHomeH1ValueIfGreaterThan, homeH1IfValue, homeH1ElseValue);
+
+window.addEventListener("resize", e => {
+    changeInnerHtmlBasedOnWindowWidth(homeH1, changeHomeH1ValueIfGreaterThan, homeH1IfValue, homeH1ElseValue);
+});
+
+// FIXME: Home ends //
 
