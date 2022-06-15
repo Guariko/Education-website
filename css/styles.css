@@ -24,11 +24,16 @@ html {
     --main-color: #1c2238;
     --second-color: #f4f4f5;
     --third-color: #f85846;
+    ---background-categories-color: #2c3061;
+    --categories-color: #40488b;
     --global-padding-horizontal: 1rem;
     --header-height: 8rem; 
     --header-font-size-items: 2rem;
     background: none;
     --paragraph-font-size: 1.3rem;
+    --category-first-color: #665dec;
+    --category-second-color: #00be8e;
+
 }
 
 ul {
@@ -47,6 +52,10 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--second-color);
+}
+
+h2 {
+    font-size: 3rem;
 }
 
 body {
@@ -149,12 +158,16 @@ body {
 
 .main {
     margin-top: var(--header-height);
-    padding: 4rem var(--global-padding-horizontal) 4rem var(--global-padding-horizontal);
+    padding: 4rem 0;
 }
 
 /* FIXME: Main adjustments end */
 
 /* TODO: Home starts */
+
+.home {
+    padding: 0 var(--global-padding-horizontal);
+}
 
 .home__content {
     display: flex;
@@ -189,6 +202,78 @@ body {
 }
 
 /* FIXME: Home ends */
+
+/* TODO: Categories start */
+
+.categories {
+    margin-top: 8rem;
+    background: var(---background-categories-color);
+    padding: 4rem var(--global-padding-horizontal);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.categories__content p {
+    text-align: center;
+}
+
+.categories__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.categories__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.category__content {
+    background: var(--categories-color);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.category__content .category__logo i {
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--second-color);
+    border-radius: 1rem;
+}
+
+.category__content:first-of-type .category__logo i,
+.category__content:last-of-type .category__logo i {
+    background: var(--category-first-color);
+}
+
+.category__content:nth-child(2) .category__logo i,
+.category__content:nth-child(4) .category__logo i {
+    background: var(--third-color);
+}
+
+.category__content:nth-child(3) .category__logo i,
+.category__content:nth-child(5) .category__logo i {
+    background: var(--category-second-color);
+}
+
+.category__content h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-transform: capitalize;
+}
+
+.category__content p {
+    max-width: 22ch;
+}
+
+/* FIXME: Categories end */
 
 /* TODO: Media queries start */
 
@@ -237,16 +322,20 @@ body {
     }
     
     /* FIXME: Home adjustments end */
+
 }
 
 @media screen and (min-width:300px) {
-
 
     /* TODO: Setting up the project adjustments */
 
     :root {
         --global-padding-horizontal: 1.5rem;
         --paragraph-font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 3.3rem;
     }
     
     /* FIXME: Setting up the project ends */
@@ -270,6 +359,7 @@ body {
     }
     
     /* FIXME: Home adjustments end */
+
 }
 
 @media screen and (min-width: 350px) {
@@ -326,6 +416,14 @@ body {
 
 @media screen and (min-width: 550px) {
 
+    /* TODO: Setting up the project adjustments */
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    /* FIXME: Setting up the project adjustments end */
+
     /* TODO: Header adjustments */
 
     .header .header__nav__bar__container.active {
@@ -335,7 +433,6 @@ body {
     /* FIXME: Header adjustments end */
     
 }
-
 
 @media screen and (min-width:700px) {
     
@@ -434,7 +531,7 @@ body {
 }
 
 @media screen and (min-width:866px) {
-
+    
     .home__content h1 {
         font-size: 3rem;
     }
@@ -442,7 +539,7 @@ body {
 }
 
 @media screen and (min-width:1000px) {
-
+    
     :root {
         --global-padding-horizontal: 8%;
     }
@@ -457,6 +554,80 @@ body {
     
 }
 
+@media screen and (min-width:1100px) {
+
+    /* TODO: Categories adjustments */
+
+    .category__content {
+        padding: 4rem;
+    }
+
+    /* FIXME: Categories adjustments end */
+    
+}
+
+@media screen and (min-width:1200px) {
+    
+    /* TODO: Categories adjustments */
+
+    .category__content {
+        padding: 2rem;
+    }
+
+    .main {
+        overflow: visible;
+    }
+
+    .categories {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        overflow: visible;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    .categories__grid {
+        display: grid;
+        align-items: initial;
+        justify-content: initial;
+        grid-template: repeat(3, 19rem) / repeat(3, 20rem);
+        gap: 4rem;
+        margin-top: 0;
+        position: absolute;
+        left: 42%;
+        top: 10%;
+    }
+
+    .categories__content {
+        align-items: flex-start;
+    }
+
+    .button__container {
+        justify-content: flex-start;
+    }
+
+    .categories__content p {
+        text-align: initial;
+}    
+    
+    /* FIXME: Categories adjustments end */
+    
+}
+
+@media screen and (min-width:1250px) {
+
+    /* TODO: Categories adjustments */
+
+    .categories__grid {
+        grid-template: repeat(3, 19rem) / repeat(3, 21rem);
+    }
+
+    /* FIXME: Categories adjustments end */
+    
+}
+
 @media screen and (min-width:1400px) {
     
     /* TODO: Setting up the project adjustments */
@@ -467,6 +638,26 @@ body {
     
     /* FIXME: Setting up the project adjustments end */
 
+    /* TODO: Categories adjustments */
+
+    .categories__grid {
+        left: 46%;
+    }
+
+    /* FIXME: Categories adjustments end */
+
+}
+
+@media screen and (min-width: 1500px) {
+
+    /* TODO: Categories adjustments */
+
+    .categories__grid {
+        left: 50%;
+    }
+
+    /* FIXME: Categories adjustments end */
+    
 }
 
 @media screen and (min-width:1700px) {
@@ -478,5 +669,13 @@ body {
     }
 
     /* FIXME: Setting up the project adjustments end */
+
+    /* TODO: Categories adjustments */
+
+    .categories__grid {
+        left: 55%;
+    }
+
+    /* FIXME: Categories adjustments end */
 
 }
