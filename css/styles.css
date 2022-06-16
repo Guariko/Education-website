@@ -275,6 +275,60 @@ body {
 
 /* FIXME: Categories end */
 
+/* TODO: Popular starts */
+
+.populars {
+    padding: 0 var(--global-padding-horizontal);
+    margin-top: 8rem;
+}
+
+.populars h2 {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.popular__image img {
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+
+.populars__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.popular {
+    background: var(---background-categories-color);
+    max-width: 40rem;
+}
+
+.popular .popular__content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+
+}
+
+.popular .popular__content h3 {
+    text-align: center;
+    font-size: 1.9rem;
+    text-transform: capitalize;
+}
+
+.popular .popular__content p {
+    text-align: center;
+    max-width: 40ch;
+}
+
+/* FIXME: Popular ends */
+
 /* TODO: Media queries start */
 
 @media screen and (min-width: 210px) {
@@ -538,6 +592,28 @@ body {
     
 }
 
+@media screen and (min-width:900px) {
+
+    /* TODO: Popular adjustments */
+
+    .populars__container {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    .popular {   
+        width: 30rem;
+        height: 39rem;
+    }
+
+    .popular .button__container {
+        justify-content: center;
+    }
+
+    /* FIXME: Popular adjustments end */
+    
+}
+
 @media screen and (min-width:1000px) {
     
     :root {
@@ -551,6 +627,15 @@ body {
     }
 
     /* FIXME: Header adjsutments end */
+
+    /* TODO: Popular adjustments */
+
+    .populars__container {
+       
+        gap: 3rem;
+    }
+
+    /* FIXME: Popular adjustments */
     
 }
 
@@ -613,6 +698,14 @@ body {
 }    
     
     /* FIXME: Categories adjustments end */
+
+    /* TODO: Popular adjustments */
+
+    .populars {
+        margin-top: 20rem;
+    }
+
+    /* FIXME: Popular adjustments end */
     
 }
 
