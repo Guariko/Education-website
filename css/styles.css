@@ -471,6 +471,64 @@ body {
 
 /* FIXME: Testimonial ends */
 
+/* TODO: Footer starts */
+
+.footer {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 var(--global-padding-horizontal);
+    padding-bottom: 4rem;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__content p {
+    text-align: center;
+}
+
+.footer__content h2 {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.footer__nav__bar__item {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.footer__nav__bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer__content span {
+    color: var(--second-color);
+    font-size: 1rem;
+}
+
+.footer__icons i {
+    font-size: 1.5rem;
+    color: var(--second-color);
+    cursor: pointer;
+}
+
+.footer__icons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* FIXME: Footer ends */
+
 /* TODO: Media queries start */
 
 @media screen and (min-width: 210px) {
@@ -490,6 +548,14 @@ body {
     }
 
     /* FIXME: Header adjustments end */
+
+    /* TODO: Footer adjustments */
+
+    .footer__content span {
+        font-size: 1.2rem;
+    }
+
+    /* FIXME: Footer adjustments end */
     
 }
 
@@ -518,6 +584,21 @@ body {
     }
     
     /* FIXME: Home adjustments end */
+
+    /* TODO: Footer adjustments */
+
+    .footer__content span {
+        font-size: 1.3rem;
+    }
+
+    .footer__nav__bar__item {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    /* FIXME: Footer adjustments end */
+
 
 }
 
@@ -790,14 +871,38 @@ body {
     }
 
     /* FIXME: Popular adjustments end */
+
+    /* TODO: Footer adjustments */
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer__content {
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .footer__content p {
+        text-align: initial;
+        max-width: 25ch;
+    }
+
+    /* FIXME: Footer adjustments end */
     
 }
 
 @media screen and (min-width:1000px) {
+
+    /* TODO: Setting up the project adjustments */
     
     :root {
         --global-padding-horizontal: 8%;
     }
+
+    /* FIXME: Setting up the project adjustments end */
 
     /* TODO: Header adjustments */
 
