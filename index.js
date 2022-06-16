@@ -56,3 +56,16 @@ window.addEventListener("resize", e => {
 
 // FIXME: Home ends //
 
+// TODO: FAQs start */
+
+const faqs = document.querySelectorAll(".faqs__content .faq");
+
+
+
+faqs.forEach(faq => {
+    faq.addEventListener("click", e => {
+        show(faq, classToShowElement);
+    });
+});
+
+// FIXME: FAQs end //

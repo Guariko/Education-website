@@ -24,6 +24,7 @@ html {
     --main-color: #1c2238;
     --second-color: #f4f4f5;
     --third-color: #f85846;
+    --fourth-color: #6b60f0;
     ---background-categories-color: #2c3061;
     --categories-color: #40488b;
     --global-padding-horizontal: 1rem;
@@ -33,7 +34,6 @@ html {
     --paragraph-font-size: 1.3rem;
     --category-first-color: #665dec;
     --category-second-color: #00be8e;
-
 }
 
 ul {
@@ -329,6 +329,72 @@ body {
 
 /* FIXME: Popular ends */
 
+/* TODO: FAQs start */
+
+.faqs {
+    margin-top: 8rem;
+    padding: 0 var(--global-padding-horizontal);
+}
+
+.faqs h2 {
+    text-align: center;
+}
+
+.faq h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.faq {
+    background: var(--fourth-color);
+    height: 7rem;
+    width: 100%;
+    max-width: 40rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.faqs__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 6rem;
+    padding: 0 1rem;
+}
+
+.faq i {
+    margin-right: 1rem;
+}
+
+.faq .fa-minus,
+.faq.active .fa-plus,
+.faq p {
+    display: none;
+}
+
+.faq.active p {
+    display: inline;
+}
+
+.faq.active {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    height: initial;
+}
+
+.faq.active .fa-minus {
+    display: initial;
+}
+
+/* FIXME: FAQs end */
+
 /* TODO: Media queries start */
 
 @media screen and (min-width: 210px) {
@@ -434,6 +500,14 @@ body {
     
     /* FIXME: Home adjustments end */
     
+    /* TODO: FAQs adjustments */
+
+    .faq {
+        padding: 2rem;
+    }
+
+    /* FIXME: FAQs adjustments end */
+    
 }
 
 @media screen and (min-width: 400px) {
@@ -453,7 +527,15 @@ body {
     }
     
     /* FIXME: Home adjustments end */
-    
+
+    /* TODO: FAQs adjustments */
+
+    .faq h3 {
+        font-size: 1.4rem;
+    }
+
+    /* FIXME: FAQs adjustments end */
+
 }
 
 @media screen and (min-width: 450px) {
@@ -465,6 +547,14 @@ body {
     }
 
     /* FIXME: Header adjustments end */
+
+    /* TODO: FAQs adjustments */
+
+    .faq h3 {
+        font-size: 1.6rem;
+    }
+
+    /* FIXME: FAQs adjustments end */
     
 }
 
@@ -581,15 +671,28 @@ body {
     }
 
     /* FIXME: Header adjustments end */
+
     
 }
 
 @media screen and (min-width:866px) {
+
+    /* TODO: Home adjustments */
     
     .home__content h1 {
         font-size: 3rem;
     }
-    
+
+    /* FIXME: Home adjustments end */
+
+    /* TODO: FAQs adjustments */
+     
+    .faqs__content {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    /* FIXME: FAQs adjustments end */
 }
 
 @media screen and (min-width:900px) {
@@ -695,7 +798,7 @@ body {
 
     .categories__content p {
         text-align: initial;
-}    
+    }    
     
     /* FIXME: Categories adjustments end */
 
@@ -706,6 +809,18 @@ body {
     }
 
     /* FIXME: Popular adjustments end */
+
+    /* TODO: FAQs adjustments */
+
+    .faqs__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40rem, 40rem));
+        align-items: initial;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    /* FIXME: FAQs adjustments end */
     
 }
 
